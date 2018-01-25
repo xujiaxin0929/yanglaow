@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>找回密码</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="common/js/flexible.js"></script>
+    <script src="common/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="common/swiper/css/swiper.min.css" />
+    <script src="common/jquery/jquery.min.js"></script>
+    <script src="common/swiper/js/swiper.min.js"></script>
+    <script type="text/javascript" src="common/js/template-web.js"></script>
+</head>
+
+<body>
+    <div class="retrieve" id="retrieve">
+        <div class="retrieve_procedure clearfix">
+            <div class="retrieve_procedure_list order procedure_active">
+                <div class="img_box">
+                    <img src="images/ico_order.png" alt="">
+                </div>
+
+            </div>
+            <div class="retrieve_procedure_list password">
+                <div class="img_box">
+                    <img src="images/ico_password.png" alt="">
+                </div>
+
+            </div>
+            <div class="retrieve_procedure_list success">
+                <div class="img_box">
+                    <img src="images/ico_success.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <div class="retrieve_procedure_span">
+            <span>填写手机号
+                <br/>及验证码
+            </span>
+            <span>重设密码
+            </span>
+            <span>操作成功
+            </span>
+        </div>
+        <div class="retrieve_phone">
+            <div class="retrieve_phone_w">
+                <div class="retrieve_phone_prompt">
+                    <img src="images/ico_phone.png" alt="">
+                    <span>通过您的手机找回密码</span>
+                </div>
+            </div>
+        </div>
+        <div class="retrieve_verification">
+            <div class="retrieve_verification_w">
+                <form action="" class="phone_input">
+                    手机号
+                    <input type="text">
+                </form>
+                <form action="" class="message_input">
+                    短信校验码
+                    <input type="text">
+                    <input type="button" value='获取验证码'>
+                </form>
+                <input type="button" value="下一步" class="next_btn">
+                <div class="email_box">
+                    <img src="images/ico_email.png" alt="">
+                    <span><a href="#">通过邮箱找回密码</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $(function ($) {
+        var swiper = new Swiper('.swiper-container');
+    })
+</script>
+
+</html>

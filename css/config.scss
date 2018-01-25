@@ -1,0 +1,41 @@
+$bodyColor: #f4f4f4;
+$titleColor:#333333;
+$moreColor:#999999;
+$rem:75;
+$pre:-webkit-;
+
+/*单位转换*/
+
+@function rem($n) {
+    @return #{$n/$rem}rem;
+}
+
+
+
+/*title公共样式*/
+
+@mixin common_title ($width,$height) {
+    height: rem(36);
+    margin-bottom: rem(25);
+    img {
+        display: inline-block;
+        float: left;
+        height: $height;
+        width: $width; // vertical-align: middle;
+    }
+    h4 {
+        font-size: rem(36);
+        color: $titleColor;
+        letter-spacing: rem(1);
+        margin-left: rem(18);
+        display: inline-block;
+        float: left;
+        line-height: rem(36);
+    }
+    a {
+        float: right;
+        color: $moreColor;
+        font-size: rem(30);
+        letter-spacing: rem(1);
+    }
+}
