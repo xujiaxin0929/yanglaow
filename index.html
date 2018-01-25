@@ -317,7 +317,9 @@
 <script>
     $(function ($) {
         var swiper = new Swiper('.swiper-container');
-
+        var city = remote_ip_info['city'];
+        var citySpan = $('.city');
+        citySpan.html(city);
         
     })
 </script>
