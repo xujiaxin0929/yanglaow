@@ -6,22 +6,82 @@
     <title>走进养老院</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/stylenew.css" />
+    <link rel="stylesheet" href="comm/css/jquery-weui.min.css">
     <script src="common/js/flexible.js"></script>
     <script src="common/js/flexible_css.js"></script>
     <link rel="stylesheet" href="common/swiper/css/swiper.min.css" />
+    
     <script src="common/jquery/jquery.min.js"></script>
     <script src="common/swiper/js/swiper.min.js"></script>
+    <script src="common/js/city-picker.min.js"></script>
+    <script src="common/js/jquery-weui.min.js"></script>
     <script type="text/javascript" src="common/js/template-web.js"></script>
+    <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script src="js/headcommon.js"></script>
+    <script src="js/url.js"></script>
+    <script src="js/enter.js"></script>
 </head>
 
 <body>
+    <header class="header" id="header">
+        <div class="header_w clearfix">
+            <img src="images/ico_dw.png" alt="" class="dw">
+            <span class="city" id="city-picker"></span>
+            <img src="images/ico_head_title.png" alt="" class="head_title">
+            <img src="images/ico_search.png" alt="" class="search">
+            <img src="images/ico_nav_none.png" alt="" class="nav_show nav_btn">
+            <img src="images/ico_nav_block.png" alt="" class="nav_close nav_btn">
+        </div>
+        <ul class="nav">
+            <li class="nav_active">
+                <a href="indexx.html">首页</a>
+            </li>
+            <li>
+                <a href="dynamic.html">行业动态</a>
+            </li>
+            <li>
+                <a href="depth.html">深度看养老</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院查询</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院地图</a>
+            </li>
+            <li>
+                <a href="javascript:;">旅居养老</a>
+            </li>
+            <li>
+                <a href="aboutUs.html">关于我们</a>
+            </li>
+            <li>
+                <a href="javascript:;">个人中心</a>
+            </li>
+        </ul>
+    </header>
     <div id="enter" class="enter">
         <!-- Swiper -->
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="images/enter_banner_01.png" alt="">
+                    <a href="">
+                        <img src="images/enter_banner_01.png" alt="">
+                    </a>
+                    <div class="swiper_box">
+                        <a href="">
+                            <p>走进养老院</p>
+                            <div class="swiper_content_box">
+                                <span>进入养老行业4年来，北京万科探索形成了独有的</span>
+                                <span>产品线体系，目前划的重要一环</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                   <a href="">
+                        <img src="images/enter_banner_01.png" alt="">
+                    </a>
                     <div class="swiper_box">
                         <p>走进养老院</p>
                         <div class="swiper_content_box">
@@ -31,17 +91,9 @@
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <img src="images/enter_banner_01.png" alt="">
-                    <div class="swiper_box">
-                        <p>走进养老院</p>
-                        <div class="swiper_content_box">
-                            <span>进入养老行业4年来，北京万科探索形成了独有的</span>
-                            <span>产品线体系，目前划的重要一环</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/enter_banner_01.png" alt="">
+                   <a href="">
+                        <img src="images/enter_banner_01.png" alt="">
+                    </a>
                     <div class="swiper_box">
                         <p>走进养老院</p>
                         <div class="swiper_content_box">
@@ -105,6 +157,7 @@
     $(function ($) {
         var swiper = new Swiper('.swiper-container');
     })
+
 </script>
 
 </html>

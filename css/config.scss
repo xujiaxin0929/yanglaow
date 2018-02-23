@@ -22,6 +22,7 @@ $pre:-webkit-;
         float: left;
         height: $height;
         width: $width; // vertical-align: middle;
+        margin-bottom: rem(-8);
     }
     h4 {
         font-size: rem(36);
@@ -31,11 +32,18 @@ $pre:-webkit-;
         display: inline-block;
         float: left;
         line-height: rem(36);
+        i{
+            font-size: rem(36);
+            letter-spacing: rem(1);
+            font-style: normal;
+            color: $titleColor;
+        }
     }
     a {
         float: right;
         color: $moreColor;
         font-size: rem(30);
         letter-spacing: rem(1);
+        width: auto;
     }
 }

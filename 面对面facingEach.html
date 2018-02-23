@@ -3,19 +3,63 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>走进养老院</title>
+    <title>养老面对面</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/stylenew.css" />
+    <link rel="stylesheet" href="comm/css/jquery-weui.min.css">
     <script src="common/js/flexible.js"></script>
     <script src="common/js/flexible_css.js"></script>
     <link rel="stylesheet" href="common/swiper/css/swiper.min.css" />
+    
     <script src="common/jquery/jquery.min.js"></script>
     <script src="common/swiper/js/swiper.min.js"></script>
+    <script src="common/js/city-picker.min.js"></script>
+    <script src="common/js/jquery-weui.min.js"></script>
     <script type="text/javascript" src="common/js/template-web.js"></script>
+    <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script src="js/headcommon.js"></script>
+    <script src="js/url.js"></script>
+    <script src="js/facingeach.js"></script>
 </head>
 
 <body>
+    <header class="header" id="header">
+        <div class="header_w clearfix">
+            <img src="images/ico_dw.png" alt="" class="dw">
+            <span class="city" id="city-picker"></span>
+            <img src="images/ico_head_title.png" alt="" class="head_title">
+            <img src="images/ico_search.png" alt="" class="search">
+            <img src="images/ico_nav_none.png" alt="" class="nav_show nav_btn">
+            <img src="images/ico_nav_block.png" alt="" class="nav_close nav_btn">
+        </div>
+        <ul class="nav">
+            <li class="nav_active">
+                <a href="indexx.html">首页</a>
+            </li>
+            <li>
+                <a href="dynamic.html">行业动态</a>
+            </li>
+            <li>
+                <a href="depth.html">深度看养老</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院查询</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院地图</a>
+            </li>
+            <li>
+                <a href="javascript:;">旅居养老</a>
+            </li>
+            <li>
+                <a href="aboutUs.html">关于我们</a>
+            </li>
+            <li>
+                <a href="javascript:;">个人中心</a>
+            </li>
+        </ul>
+    </header>
     <div id="facEach" class="facEach">
         <!-- Swiper -->
         <div class="swiper-container">
@@ -51,7 +95,7 @@
         </div>
         <div class="facEach_content">
             <div class="facEach_content_w">
-                <div class="facEach_content_tab clearfix">
+                <!--<div class="facEach_content_tab clearfix">
                     <div class="facEach_content_scroll clearfix">
                         <p>全部</p>
                         <ul>
@@ -60,13 +104,30 @@
                             <li>长辈系列</li>
                         </ul>
                     </div>
-                </div>
+                </div>-->
                 <div class="faceEach_list clearfix">
                     <div class="faceEach_list_title clearfix">
                         <img src="images/ico_comment.png" alt="">
-                        <h4>北京养老院推荐</h4>
+                        <h4>文章列表</h4>
                     </div>
-                    <div class="faceEach_list_box">
+                    <script id='list' type='text/html'>
+                    {{each data item}}
+                        <div class="faceEach_list_box">
+                             
+                           <a href="pageDetails.html?id={{item.id}}">
+                                <div class="faceEach_img_box">
+                                <div class="img_box_title">
+                                    <span>第20期</span>
+                                    <img src="images/faceEach_list_title.png" alt="">
+                                </div>
+                                <img src="{{comurl}}{{item.cover_image}}" alt="">
+                            </div>
+                            <p>{{item.title}}</p>
+                           </a>
+                        </div>
+                    {{/each}}
+                    </script>
+                    <!--<div class="faceEach_list_box">
                         <div class="faceEach_img_box">
                             <div class="img_box_title">
                                 <span>第20期</span>
@@ -125,7 +186,11 @@
                             <img src="images/faceEach_list_03.png" alt="">
                         </div>
                         <p>椿萱茂的运营体系及战略布局——对话椿萱茂（亦庄）</p>
-                    </div>
+                    </div>-->
+                </div>
+                <div class="loading" data-num="1">
+                        <img src="images/loading.gif" alt="">
+                        <span>加载更多</span>
                 </div>
             </div>
         </div>

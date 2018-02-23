@@ -3,40 +3,101 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>走进养老院</title>
+    <title>文章详情</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/stylenew.css" />
+    <link rel="stylesheet" href="comm/css/jquery-weui.min.css">
     <script src="common/js/flexible.js"></script>
     <script src="common/js/flexible_css.js"></script>
     <link rel="stylesheet" href="common/swiper/css/swiper.min.css" />
+    
     <script src="common/jquery/jquery.min.js"></script>
     <script src="common/swiper/js/swiper.min.js"></script>
+    <script src="common/js/city-picker.min.js"></script>
+    <script src="common/js/jquery-weui.min.js"></script>
     <script type="text/javascript" src="common/js/template-web.js"></script>
+    <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script src="js/headcommon.js"></script>
+    <script src="js/url.js"></script>
+    <script src="js/pagelist.js"></script>
 </head>
 
 <body>
+    <header class="header" id="header">
+        <div class="header_w clearfix">
+            <img src="images/ico_dw.png" alt="" class="dw">
+            <span class="city" id="city-picker"></span>
+            <img src="images/ico_head_title.png" alt="" class="head_title">
+            <img src="images/ico_search.png" alt="" class="search">
+            <img src="images/ico_nav_none.png" alt="" class="nav_show nav_btn">
+            <img src="images/ico_nav_block.png" alt="" class="nav_close nav_btn">
+        </div>
+        <ul class="nav">
+            <li class="nav_active">
+                <a href="indexx.html">首页</a>
+            </li>
+            <li>
+                <a href="dynamic.html">行业动态</a>
+            </li>
+            <li>
+                <a href="depth.html">深度看养老</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院查询</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院地图</a>
+            </li>
+            <li>
+                <a href="javascript:;">旅居养老</a>
+            </li>
+            <li>
+                <a href="aboutUs.html">关于我们</a>
+            </li>
+            <li>
+                <a href="javascript:;">个人中心</a>
+            </li>
+        </ul>
+    </header>
     <div class="pageList" id="pageList">
         <div class="pageList_w">
             <div class="pageList_tab">
                 <div class="pageList_tab_scroll clearfix">
                     <p>所有</p>
-                    <ul>
-                        <li class="pageList_tab_active">要闻速递</li>
+                    <ul class='pageList_tab_father'>
+                        <!--<li class="pageList_tab_active">要闻速递</li>
                         <li>养老院日常</li>
                         <li>养老院政策</li>
-                        <li>展会信息</li>
+                        <li>展会信息</li>-->
                     </ul>
+                    <script id='head' type='text/html'>
+                        {{each data item}}
+                        <li data-id='{{item.id}}'>{{item.name}}</li>
+                        {{/each}}
+                    </script>
                 </div>
             </div>
-            <ul class="pageList_tab_son clearfix">
+            <!--<ul class="pageList_tab_son clearfix">
                 <li class="pageList_tab_active">养老院见闻</li>
                 <li>老人生活</li>
                 <li>管理心得</li>
                 <li>养生保健</li>
-            </ul>
+            </ul>-->
+            <div class="pageList_tab_son_box">
+     
+            </div>
+            <script id='son' type='text/html'>
+                         {{each data item}} 
+                         <ul class="pageList_tab_son hide clearfix" data-father='{{item.id}}'>
+                         {{each item.next val}}
+                                <li data-id='{{val.id}}'>{{val.name}}</li>
+                         {{/each}}
+                         </ul> 
+                        {{/each}}
+             </script>
             <ul class="pageList_tab_list">
-                <li>
+                <!--<li>
                     <a href="" class="clearfix">
                         <p>2017中国国际养生健康大会暨第二届</p>
                         <span>2017-9-7</span>
@@ -83,12 +144,26 @@
                         <p>台媒：台语文课本世界文学严重不足</p>
                         <span>2017-9-7</span>
                     </a>
-                </li>
+                </li>-->
+                <script id='headlist' type='text/html'>
+                    {{each data item}}
+                    <li>
+                        <a href="pageDetails.html?id={{item.id}}">
+                            <p>{{item.title}}</p>
+                            <span>{{item.create_time}}</span>
+                        </a>
+                    </li>
+                    {{/each}}
+                </script>
             </ul>
+            <div class="loading" data-num='1'>
+                    <img src="images/loading.gif" alt="">
+                    <span>加载更多</span>
+             </div>
             <div class="pageList_look">
                 <h2>大家都在看</h2>
                 <div class="look_list">
-                    <p>1
+                    <!--<p>1
                         <a href="javascript:;">如何选择养老院</a>
                     </p>
                     <p>2
@@ -102,12 +177,19 @@
                     </p>
                     <p>5
                         <a href="javascript:;">养老院一个月多少钱？</a>
-                    </p>
+                    </p>-->
+                    <script id="allLook" type="text/html">
+                        {{each data as item i}}
+                        <p>{{i+1}}
+                            <a href="pageDetails.html?id={{item.id}}">{{item.title}}</a>
+                        </p>
+                        {{/each}}
+                    </script>
                 </div>
             </div>
             <div class="pageList_marvellous">
                 <h2>精彩推荐</h2>
-                <div class="marvellous_list clearfix">
+                <!--<div class="marvellous_list clearfix">
                     <img src="images/pageDetails_list_03.png" alt="" data-bd-imgshare-binded="1">
                     <div class="marvellous_right">
                         <div class="details">
@@ -130,13 +212,28 @@
                             <div class="cell">2017中国国际养生健康大会暨第二届中医药健康养生产业展览会</div>
                         </div>
                     </div>
-                </div>
+                </div>-->
+                <script id='marvel' type='text/html'>
+                    {{each data item}}
+                        <div class="marvellous_list clearfix">
+                            <a href="pageDetails.html?id={{item.id}}">
+                                <img src="{{comurl}}{{item.cover_image}}" alt="">
+                            <div class="marvellous_right">
+                            <div class="details">
+                            <div class="cell">{{item.title}}</div>
+                             </div>
+                            </div>
+                            </a>
+                        </div>
+                    {{/each}}
+                </script>
             </div>
         </div>
     </div>
 
 </body>
 <script>
+
 </script>
 
 

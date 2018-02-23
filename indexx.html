@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/stylenew.css" />
+    <link rel="stylesheet" href="comm/css/jquery-weui.min.css">
+    <script src="common/js/flexible.js"></script>
+    <script src="common/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="common/swiper/css/swiper.min.css" />
+    
+    <script src="common/jquery/jquery.min.js"></script>
+    <script src="common/swiper/js/swiper.min.js"></script>
+    <script src="common/js/city-picker.min.js"></script>
+    <script src="common/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="common/js/template-web.js"></script>
+    <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <!--<script src="js/headcommon.js"></script>-->
+    <script src="js/url.js"></script>
+    <script src="js/indexx.js"></script>
+</head>
+ 
+<body>
+    <header class="header" id="header">
+        <div class="header_w clearfix">
+            <img src="images/ico_dw.png" alt="" class="dw">
+            <span class="city" id="city-picker"></span>
+            <img src="images/ico_head_title.png" alt="" class="head_title">
+            <img src="images/ico_search.png" alt="" class="search">
+            <img src="images/ico_nav_none.png" alt="" class="nav_show nav_btn">
+            <img src="images/ico_nav_block.png" alt="" class="nav_close nav_btn">
+        </div>
+        <ul class="nav">
+            <li class="nav_active">
+                <a href="indexx.html">首页</a>
+            </li>
+            <li>
+                <a href="dynamic.html">行业动态</a>
+            </li>
+            <li>
+                <a href="depth.html">深度看养老</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院查询</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院地图</a>
+            </li>
+            <li>
+                <a href="javascript:;">旅居养老</a>
+            </li>
+            <li>
+                <a href="aboutUs.html">关于我们</a>
+            </li>
+            <li>
+                <a href="javascript:;">个人中心</a>
+            </li>
+        </ul>
+    </header>
+    <div id="home_page" class="home_page">
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <script id="banner" type="text/html">
+                    {{each data item}}
+                    <div class="swiper-slide">
+                        <a href="{{item.url}}">
+                             <img src="{{comurl}}{{item.image_m}}" alt="">
+                            </a>
+                    </div>
+                    {{/each}}
+                </script>
+            </div>
+        </div>
+        <div class="hp_recommend" id="hp_recommend">
+            <div class="hp_recommend_w">
+                <div class="hp_recommend_title clearfix">
+                    <img src="images/ico_good.png" alt="">
+                    <h4><i>北京</i>养老院推荐</h4>
+                    <a href="javascript:;">
+                        More >
+                    </a>
+                </div>
+                <div class="hp_recommend_scroll">
+                    <script id="test" type="text/html">
+                        <ul class="clearfix">
+                            {{each data item}}
+                            <li data-id='{{item.id}}'>
+                                <div class="scroll_img_box">
+                                    <img src="{{comurl}}{{item.cover_image}}" alt="">
+                                    <div class="txt_shadow">
+                                        <span>{{item.name}}</span>
+                                    </div>
+                                </div>
+                                <p>{{item.charge}}起</p>
+                                <span>{{item.district}}</span>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="hp_hotcity" id="hp_hotcity">
+            <div class="hp_hotcity_w">
+                <div class="hp_hotcity_title">
+                    <img src="images/ico_hotcity.png" alt="">
+                    <h4>当季热门旅居养老城市</h4>
+                </div>
+                <div class="hp_hotcity_box">
+                    <script id="living" type="text/html">
+                        <ul class="clearfix">
+                            {{each data item}}
+                            <li data-id='{{item.city_id}}'>
+                                <a href="pension.html">
+                                <img src="{{comurl}}{{item.cover_image}}" alt="">
+                                <div class="hp_hotcity_txtbox">
+                                    {{item.city.short_name}}
+                                </div>
+                                </a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="hp_watch" id="hp_watch">
+            <div class="hp_watch_w">
+                <div class="hp_watch_title">
+                    <img src="images/ico_watch.png" alt="">
+                    <h4>深度看养老</h4>
+                    <a href="depth.html">
+                        More >
+                    </a>
+                </div>
+                <div class="hp_watch_tab">
+                    <div class="hp_watch_scroll clearfix">
+                        <script id="look_title" type="text/html">
+                            <ul>
+                                {{each data item}}
+                                <li>{{item.category_name}}</li>
+                                {{/each}}
+                            </ul>
+                        </script>
+
+                    </div>
+                </div>
+                <script id="look_content" type="text/html">
+
+                    {{each data item}}
+                    <div class="hp_watch_list_box hide">
+                        {{each item.industry_news ite}}
+                        <div class="hp_watch_list clearfix">
+                            <a href="pageDetails.html?id={{ite.id}}">
+                                <img src="{{comurl}}{{ite.cover_image}}" alt="">
+                            <div class="hp_watch_txt">
+                                <h4>{{ite.title}}</h4>
+                                <p>{{ite.summary}}</p>
+                            </div>
+                            </a>
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/each}}
+
+                </script>
+
+                <!--<div class="hp_watch_list clearfix">
+                    <img src="images/watch_01.png" alt="">
+                    <div class="hp_watch_txt">
+                        <h4>走进万科嘉园长阳长者中心</h4>
+                        <p>嘉园长阳长者中心是北京万科养老管理公司与房山区政府合作的共建民营养老项目</p>
+                    </div>
+                </div>
+                <div class="hp_watch_list clearfix">
+                    <img src="images/watch_01.png" alt="">
+                    <div class="hp_watch_txt">
+                        <h4>走进万科嘉园长阳长者中心</h4>
+                        <p>嘉园长阳长者中心是北京万科养老管理公司与房山区政府合作的共建民营养老项目</p>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div class="hp_dynamic" id="hp_dynamic">
+            <div class="hp_dynamic_w">
+                <div class="hp_dynamic_title">
+                    <img src="images/ico_dynamic.png" alt="">
+                    <h4>行业动态</h4>
+                    <a href="dynamic.html">
+                        More >
+                    </a>
+                </div>
+                <div class="hp_dynamic_tab">
+                    <div class="hp_dynamic_scroll clearfix">
+                        <!--<li class="dynamic_active">要闻速递</li>
+                            <li>养老院日常</li>
+                            <li>展会信息</li>
+                            <li>养生保健</li>
+                            <li>管理心得</li>-->
+                        <script id="industry_title" type="text/html">
+                            <ul class="clearfix">
+                                {{each data item}}
+                                <li>
+                                    {{item.category_name}}
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </script>
+                    </div>
+                </div>
+                <script id="industry_content" type="text/html">
+                    {{each data item}}
+                    <div class="hp_dynamic_list_box hide">
+                        {{each item.industry_news ite}}
+                        <div class="hp_dynamic_list clearfix">
+                            <a href="pageDetails.html?id={{ite.id}}">
+                                <img src="{{comurl}}{{ite.cover_image}}" alt="">
+                            <div class="hp_dynamic_txt">
+                                <h4>{{ite.title}}</h4>
+                                <p>{{ite.summary}}</p>
+                                <span>本站原创</span>
+                                
+                                 <span class="data">{{ite.create_time}}</span>
+                                <div class="fabulous" data-id='{{ite.id}}' data-downs='{{ite.downs}}'>
+                                    <img src="images/ico_fabulous.png" alt="">
+                                    <span class="fabulous_num">{{ite.ups}}</span>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/each}}
+
+                </script>
+                <!--<span class="data">{{ite.create_time  | dateFormat:'yyyy年 MM月 dd日 hh:mm:ss'}} </span>-->
+                <!--<div class="hp_dynamic_list clearfix">
+                    <img src="images/dynamic_1.png" alt="">
+                    <div class="hp_dynamic_txt">
+                        <h4>2017中国国际养生健康大会</h4>
+                        <p>习近平指出，当前，中美各领域交往与合作继续推进。</p>
+                        <span>本站原创</span>
+                        <span class="data">2017年9月7日 16:20</span>
+                        <div class="fabulous">
+                            <img src="images/ico_fabulous.png" alt="">
+                            <span class="fabulous_num">11</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hp_dynamic_content clearfix">
+                    <h4>2017中国国际养生健康大会暨第二届中医药健康养生</h4>
+                    <p>习近平指出，当前，中美各领域交往与合作继续推进。两国外交安全团队和经济团队保持密切沟通，双方正在筹备首轮中美社会和人文对话</p>
+                    <span>本站原创</span>
+                    <span class="data">2017年9月7日 16:20</span>
+                    <div class="fabulous">
+                        <img src="images/ico_fabulous.png" alt="">
+                        <span class="fabulous_num">11</span>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+        <div class="hp_brand" id="hp_brand">
+            <div class="hp_brand_w">
+                <div class="hp_brand_title">
+                    <img src="images/ico_brand.png" alt="">
+                    <h4>养老品牌推荐</h4>
+                    <a href="javascript:;">
+                        More >
+                    </a>
+                </div>
+                <div class="hp_brand_list">
+                </div>
+                <script id="recommend" type="text/html">
+                    <ul class="clearfix">
+                        {{each data item}}
+                        <li>
+                            <img src="{{comurl}}{{item.logo}}" alt="">
+                        </li>
+                        {{/each}}
+                    </ul>
+                </script>
+            </div>
+        </div>
+        <footer class="hp_footer" id="hp_footer">
+            <div class="hp_footer_w">
+                <ul class="clearfix">
+                    <li>
+                        <a href="aboutUs.html">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">联系我们</a>
+                    </li>
+                    <li>
+
+                        <a href="aboutUs.html">网站声明</a>
+                    </li>
+                    <li>
+                        <a href="aboutUs.html">招贤纳士</a>
+                    </li>
+                </ul>
+                <div class="hp_footer_ba">
+                    <p>Copyright © 2008 - 2017 养老客 All Rights Reserved</p>
+                    <span>京ICP备09078674号 </span>
+                    <span>京公网安备1101055035号</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+</body>
+
+
+</html>

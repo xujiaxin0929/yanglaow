@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文章详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/stylenew.css" />
+    <link rel="stylesheet" href="comm/css/jquery-weui.min.css">
+    <script src="common/js/flexible.js"></script>
+    <script src="common/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="common/swiper/css/swiper.min.css" />
+    
+    <script src="common/jquery/jquery.min.js"></script>
+    <script src="common/swiper/js/swiper.min.js"></script>
+    <script src="common/js/city-picker.min.js"></script>
+    <script src="common/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="common/js/template-web.js"></script>
+    <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script src="js/headcommon.js"></script>
+    <script src="js/url.js"></script>
+    <script src="js/pagedetails.js"></script>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header_w clearfix">
+            <img src="images/ico_dw.png" alt="" class="dw">
+            <span class="city" id="city-picker"></span>
+            <img src="images/ico_head_title.png" alt="" class="head_title">
+            <img src="images/ico_search.png" alt="" class="search">
+            <img src="images/ico_nav_none.png" alt="" class="nav_show nav_btn">
+            <img src="images/ico_nav_block.png" alt="" class="nav_close nav_btn">
+        </div>
+        <ul class="nav">
+            <li class="nav_active">
+                <a href="indexx.html">首页</a>
+            </li>
+            <li>
+                <a href="dynamic.html">行业动态</a>
+            </li>
+            <li>
+                <a href="depth.html">深度看养老</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院查询</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院地图</a>
+            </li>
+            <li>
+                <a href="javascript:;">旅居养老</a>
+            </li>
+            <li>
+                <a href="aboutUs.html">关于我们</a>
+            </li>
+            <li>
+                <a href="javascript:;">个人中心</a>
+            </li>
+        </ul>
+    </header>
+    <div id="pageDT" class="pageDT">
+
+        <div class="pageDT_ajax">
+
+            <script id='headmessage' type="text/html">
+                <div class="pageDt_title">
+                    <div class="pageDt_title_w">
+                        <h2>{{data.title}}</h2>
+                        <span>来源:
+                         <i>{{data.source}}</i>
+                        </span>
+                        <span>浏览量:
+                         <i>{{data.views}}</i>
+                        </span>
+                        <span>
+                        <i>{{data.create_time}}</i>
+                        </span>
+                    </div>
+                </div>
+                <div class="pageDT_content">
+                    <div class="pageDT_content_w">
+                        {{#data.content}}
+                    </div>
+                </div>
+                <div class="pageDT_fabulous">
+                    <div class="pageDT_fabulous_w">
+                        <div class="fabulous"></div>
+                        <div class="leftIco">
+                            <img src="images/ico_falower.png" alt="">
+                        </div>
+                        <div class="rightIco">
+                            <img src="images/ico_step.png" alt="">
+                        </div>
+                        <span class="leftSpan">{{data.ups}}</span>
+                        <span class="rightSpan">{{data.downs}}</span>
+                    </div>
+                </div>
+                
+            </script>
+        </div>
+        <div class="bdsharebuttonbox_w clearfix">
+                    <div class="bdsharebuttonbox">
+                        <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                        <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                        <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+                        <a href="#" class="bds_tqf" data-cmd="tqf" title="分享到腾讯朋友"></a>
+                        <a href="#" class="bds_more" data-cmd="more"></a>
+                    </div>
+
+                    <div class="share">分享到 : </span>
+                        <script>
+                            window._bd_share_config = {
+                            "common": {
+                                "bdSnsKey": {},
+                                "bdText": "",
+                                "bdMini": "2",
+                                "bdMiniList": false,
+                                "bdPic": "",
+                                "bdStyle": "0",
+                                "bdSize": "16"
+                            },
+                            "share": {},
+                            "image": {
+                                "viewList": ["qzone", "tsina", "tqq", "weixin", "renren", "tqf"],
+                                "viewText": "分享到：",
+                                "viewSize": "24"
+                            },
+                            "selectShare": {
+                                "bdContainerClass": null,
+                                "bdSelectMiniList": ["qzone", "tsina", "tqq", "weixin", "renren", "tqf"]
+                            }
+                            };
+                            with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src =
+                                'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() /36e5)
+                             ];
+                        </script>
+                    </div>
+                </div>
+        <div class="pageDT_relevant">
+            <div class="pageDT_relevant_w">
+                <h2>相关阅读:</h2>
+                <ul>
+                    <!--<li>
+                        <a href="javascript:;">北上广深等12城暂停共享单车投放 多地严查乱停乱放</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">北上广深等12城暂停共享单车投放 多地严查乱停乱放</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">北上广深等12城暂停共享单车投放 多地严查乱停乱放</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">北上广深等12城暂停共享单车投放 多地严查乱停乱放</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">北上广深等12城暂停共享单车投放 多地严查乱停乱放</a>
+                    </li>-->
+                    <script id="rank" type='text/html'>
+                    {{each data item}}
+                        <li>
+                            <a href="pageDetails.html?id={{item.id}}">{{item.title}}</a>
+                        </li>
+                    {{/each}}
+                    </script>
+                </ul>
+            </div>
+
+        </div>
+        <!--<div class="pageDT_comment">
+            <div class="pageDT_comment_w">
+                <h2>网友评论&nbsp&nbsp(
+                    <i>16</i>条)</h2>
+                <div class="pageDT_comment_content clearfix">
+                    <img src="images/pageDetails_03.png" alt="">
+                    <div class="pageDT_comment_txtBox">
+                        <div class="pageDT_commont_top clearfix">
+                            <h4>养老客网友</h4>
+                            <p>IP：
+                                <i>118.244.254.*</i>
+                            </p>
+                            <span>2017-08-11 12:01:10</span>
+                        </div>
+                        <p>感谢夕阳红的全体员工，我外婆去年去住的，因为中风在家里无法照顾，我们也不知道怎么护理。</p>
+                    </div>
+                </div>
+                <div class="pageDT_comment_content clearfix">
+                    <img src="images/pageDetails_03.png" alt="">
+                    <div class="pageDT_comment_txtBox">
+                        <div class="pageDT_commont_top clearfix">
+                            <h4>养老客网友</h4>
+                            <p>IP：
+                                <i>118.244.254.*</i>
+                            </p>
+                            <span>2017-08-11 12:01:10</span>
+                        </div>
+                        <p>感谢夕阳红的全体员工，我外婆去年去住的，因为中风在家里无法照顾，我们也不知道怎么护理。</p>
+                    </div>
+                </div>
+                <div class="pageDT_comment_pl">
+                    <h3>发表评论</h3>
+                    <textarea name="" id="" cols="30" rows="10" placeholder='请理性发言!'></textarea>
+                    <div class="verification">
+                        <form action="">
+                            验证码
+                            <input type="text">
+                        </form>
+                        <img src="images/pageDetail_yz.png" alt="">
+                        <input type="button" value="提交">
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div class="pageDT_look">
+            <div class="pageDT_look_w">
+                <h2>大家都在看</h2>
+                <div class="look_list">
+                    <script id='allLook' type='text/html'>
+                    {{each data as item i}}
+                        <p>{{i+1}}
+                            <a href="文章详情pageDetails.html?id={{item.id}}">{{item.title}}</a>
+                        </p>
+                        {{/each}}
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="pageDT_marvellous">
+            <div class="pageDT_marvellous_w">
+                <h2>精彩推荐</h2>
+                <!--<div class="marvellous_list clearfix">
+                    <img src="images/pageDetails_list_03.png" alt="">
+                    <div class="marvellous_right">
+                        <div class="details">
+                            <div class="cell">2017中国国际养生健康大会暨第二届中医药健康养生产业展览会</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="marvellous_list clearfix">
+                    <img src="images/pageDetails_list_03.png" alt="">
+                    <div class="marvellous_right">
+                        <div class="details">
+                            <div class="cell">2017中国国际养生健康大会暨第二届中医药健康养生产业展览会</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="marvellous_list clearfix">
+                    <img src="images/pageDetails_list_03.png" alt="">
+                    <div class="marvellous_right">
+                        <div class="details">
+                            <div class="cell">2017中国国际养生健康大会暨第二届中医药健康养生产业展览会</div>
+                        </div>
+                    </div>
+                </div>-->
+                <script id='marvel' type='text/html'>
+                    {{each data item}}
+                        <div class="marvellous_list clearfix">
+                            <a href="pageDetails.html?id={{item.id}}">
+                                <img src="{{comurl}}{{item.cover_image}}" alt="">
+                            <div class="marvellous_right">
+                            <div class="details">
+                            <div class="cell">{{item.title}}</div>
+                             </div>
+                            </div>
+                            </a>
+                        </div>
+                    {{/each}}
+                </script>
+            </div>
+
+        
+        </div>
+   
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>深度</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="css/stylenew.css" />
+    <link rel="stylesheet" href="comm/css/jquery-weui.min.css">
+    <script src="common/js/flexible.js"></script>
+    <script src="common/js/flexible_css.js"></script>
+    <link rel="stylesheet" href="common/swiper/css/swiper.min.css" />
+    
+    <script src="common/jquery/jquery.min.js"></script>
+    <script src="common/swiper/js/swiper.min.js"></script>
+    <script src="common/js/city-picker.min.js"></script>
+    <script src="common/js/jquery-weui.min.js"></script>
+    <script type="text/javascript" src="common/js/template-web.js"></script>
+    <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <script src="js/headcommon.js"></script>
+    <script src="js/url.js"></script>
+    <script src="js/depth.js"></script>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header_w clearfix">
+            <img src="images/ico_dw.png" alt="" class="dw">
+            <span class="city" id="city-picker"></span>
+            <img src="images/ico_head_title.png" alt="" class="head_title">
+            <img src="images/ico_search.png" alt="" class="search">
+            <img src="images/ico_nav_none.png" alt="" class="nav_show nav_btn">
+            <img src="images/ico_nav_block.png" alt="" class="nav_close nav_btn">
+        </div>
+        <ul class="nav">
+            <li class="nav_active">
+                <a href="indexx.html">首页</a>
+            </li>
+            <li>
+                <a href="dynamic.html">行业动态</a>
+            </li>
+            <li>
+                <a href="depth.html">深度看养老</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院查询</a>
+            </li>
+            <li>
+                <a href="javascript:;">养老院地图</a>
+            </li>
+            <li>
+                <a href="javascript:;">旅居养老</a>
+            </li>
+            <li>
+                <a href="aboutUs.html">关于我们</a>
+            </li>
+            <li>
+                <a href="javascript:;">个人中心</a>
+            </li>
+        </ul>
+    </header>
+    <div id="depth" class="depth">
+        <!-- Swiper -->
+        <div class="swiper_box">
+            <div class="swiper-container gallery-top">
+
+                <!--<div class="swiper-slide">
+                        <img src="images/depth_banner_1.png" alt="">
+                        <div class="swiper_txt_box">
+                            <h2>养老面对面</h2>
+                            <span>椿萱茂的运营体系及战略布局——对话椿萱茂（亦庄）老年 公寓总经理</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/depth_banner_1.png" alt="">
+                        <div class="swiper_txt_box">
+                            <h2>养老面对面</h2>
+                            <span>椿萱茂的运营体系及战略布局——对话椿萱茂（亦庄）老年 公寓总经理</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/depth_banner_1.png" alt="">
+                        <div class="swiper_txt_box">
+                            <h2>养老面对面</h2>
+                            <span>椿萱茂的运营体系及战略布局——对话椿萱茂（亦庄）老年 公寓总经理</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/depth_banner_1.png" alt="">
+                        <div class="swiper_txt_box">
+                            <h2>养老面对面</h2>
+                            <span>椿萱茂的运营体系及战略布局——对话椿萱茂（亦庄）老年 公寓总经理</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/depth_banner_1.png" alt="">
+                        <div class="swiper_txt_box">
+                            <h2>养老面对面</h2>
+                            <span>椿萱茂的运营体系及战略布局——对话椿萱茂（亦庄）老年 公寓总经理</span>
+                        </div>
+                    </div>-->
+                <script id="swiper" type="text/html">
+                    <div class="swiper-wrapper">
+                        {{each data item}}
+                        <div class="swiper-slide">
+                            <a href="{{item.url}}">
+                            <img src="{{comurl}}{{item.image_m}}" alt="">
+                            <!--<div class="swiper_txt_box">
+                                
+                                    <h2>养老面对面</h2>
+                                    <span>椿萱茂的运营体系及战略布局——对话椿萱茂（亦庄）老年 公寓总经理</span>
+                            </div>-->
+                            </a>
+                        </div>
+
+                        {{/each}}
+                    </div>
+                </script>
+
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <!--<div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="images/depth_banner_s_1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/depth_banner_s_1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/depth_banner_s_1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/depth_banner_s_1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="images/depth_banner_s_1.png" alt="">
+                    </div>
+                </div>-->
+                <script id="swiperbottom" type="text/html">
+                    <div class="swiper-wrapper">
+                        {{each data item}}
+                        <div class="swiper-slide">
+                            <img src="{{comurl}}{{item.image_m}}" alt="">
+                        </div>
+                        {{/each}}
+                    </div>
+                </script>
+            </div>
+        </div>
+        <div class="depth_rank">
+            <div class="depth_rank_w">
+                <!--<div class="depth_rank_title">
+                    <h2 class="">推荐排行榜</h2>
+                </div>
+                <ul>
+                    <li class="clearfix">
+                        <a href="javascript:;">走进万科长阳嘉园长者中心</a>
+                        <span>1</span>
+                    </li>
+                    <li class="clearfix">
+                        <a href="javascript:;">走进万科长阳嘉园长者中心</a>
+                        <span>2</span>
+                    </li>
+                    <li class="clearfix">
+                        <a href="javascript:;">照护着关爱计划启动</a>
+                        <span>3</span>
+                    </li>
+                    <li class="clearfix">
+                        <a href="javascript:;">药物滥用监测报告</a>
+                        <span>4</span>
+                    </li>
+                    <li class="clearfix">
+                        <a href="javascript:;">中国经济有韧性！</a>
+                        <span>5</span>
+                    </li>
+                </ul>-->
+                <script id="rank" type="text/html">
+                    <div class="depth_rank_title">
+                        <h2 class="">推荐排行榜</h2>
+                    </div>
+                    <ul>
+                        {{each data item i}}
+                        <li class="clearfix">
+                            <a href="文章详情pageDetails.html?id={{item.id}}">{{item.title}}</a>
+                            <span>{{i+1}}</span>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </script>
+            </div>
+
+        </div>
+        <div class="depth_recommend">
+            <div class="depth_recommend_w">
+                <!--<div class="depth_recommend_title">
+                    <h2 class="">小编推荐</h2>
+                </div>
+                <div class="depth_recommend_list clearfix">
+                    <div class="depth_recommend_box">
+                        <a href="">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </a>
+                    </div>
+                    <div class="depth_recommend_box">
+                        <img src="images/depth_recommend_list_03.png" alt="">
+                        <div class="shadow">
+                            椿萱茂老年公寓
+                        </div>
+                    </div>
+                    <div class="depth_recommend_box">
+                        <img src="images/depth_recommend_list_03.png" alt="">
+                        <div class="shadow">
+                            椿萱茂老年公寓
+                        </div>
+                    </div>
+                </div>-->
+
+                <script id="recommend" type="text/html">
+                    <div class="depth_recommend_title">
+                        <h2 class="">小编推荐</h2>
+                    </div>
+                    <div class="depth_recommend_list clearfix">
+                        {{each data item}}
+                        <div class="depth_recommend_box">
+                            <a href="文章详情pageDetails.html?id={{item.id}}">
+                                    <img src="{{comurl}}{{item.cover_image}}" alt="">
+                                    <div class="shadow">
+                                     {{item.title}}
+                                    </div>
+                                </a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </script>
+            </div>
+        </div>
+        <div class="depth_enter_box">
+            <script id="deptbox" type="text/html">
+                {{each data item}}
+                <div class="depth_enter">
+                    <div class="depth_enter_w">
+                        <div class="depth_enter_title">
+                            <h2 class="">{{item.category_name}}</h2>
+                        </div>
+                        
+                        <div class="depth_enter_box">
+                            <div class="depth_enter_top clearfix">
+                                <div class="depth_enter_left">
+                                    <a href="文章详情pageDetails.html?id={{item.industry_news[0].id}}">
+                                        <img src="{{comurl}}{{item.industry_news[0].cover_image}}" alt="">
+                                        <div class="number">
+                                            <span>点击</span>
+                                            <span>4506</span>
+                                        </div>
+                                        <div class="shadow">{{item.industry_news[0].title}}</div>
+                                    </a>
+                                </div>
+                                <div class="depth_enter_right">
+                                    <div class="top right_box">
+                                        <a href="文章详情pageDetails.html?id={{item.industry_news[1].id}}">
+                                        <img src="{{comurl}}{{item.industry_news[1].cover_image}}" alt="">
+                                        <div class="number">
+                                            <span>点击</span>
+                                            <span>5000</span>
+                                        </div>
+                                        <div class="shadow">{{item.industry_news[1].title}}</div>
+                                        </a>
+                                    </div>
+                                    <div class="bottom right_box">
+                                        <a href="文章详情pageDetails.html?id={{item.industry_news[2].id}}">
+                                        <img src="{{comurl}}{{item.industry_news[2].cover_image}}" alt="">
+                                        <div class="number">
+                                            <span>点击</span>
+                                            <span>5000</span>
+                                        </div>
+                                        <div class="shadow">{{item.industry_news[2].title}}</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="depth_enter_list clearfix">
+                                <div class="depth_enter_box">
+                                    <a href="文章详情pageDetails.html?id={{item.industry_news[3].id}}">
+                                    <img src="{{comurl}}{{item.industry_news[3].cover_image}}" alt="">
+                                    <div class="shadow">
+                                        {{item.industry_news[3].title}}
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="depth_enter_box">
+                                    <a href="文章详情pageDetails.html?id={{item.industry_news[4].id}}">
+                                    <img src="{{comurl}}{{item.industry_news[4].cover_image}}" alt="">
+                                    <div class="shadow">
+                                       {{item.industry_news[4].title}}
+                                    </div>
+                                    </a>
+                                </div>
+                                <div class="depth_enter_box">
+                                    <a href="文章详情pageDetails.html?id={{item.industry_news[5].id}}">
+                                    <img src="{{comurl}}{{item.industry_news[5].cover_image}}" alt="">
+                                    <div class="shadow">
+                                       {{item.industry_news[5].title}}
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </script>
+        </div>
+        <!--<div class="depth_faceEach">
+            <div class="depth_faceEach_w">
+                <div class="depth_faceEach_title">
+                    <h2 class="">养老面对面</h2>
+                </div>
+                <div class="depth_faceEach_box">
+                    <div class="depth_faceEach_top clearfix">
+                        <div class="depth_faceEach_left">
+                            <img src="images/depth_faceEach_box_03.png" alt="">
+                            <div class="number">
+                                <span>点击</span>
+                                <span>4506</span>
+                            </div>
+                            <div class="shadow">椿萱茂的运营体系及战略布局</div>
+                        </div>
+                        <div class="depth_faceEach_right">
+                            <div class="top right_box">
+                                <img src="images/depth_recommend_list_03.png" alt="">
+                                <div class="number">
+                                    <span>点击</span>
+                                    <span>5000</span>
+                                </div>
+                                <div class="shadow">椿萱茂老年公寓</div>
+                            </div>
+                            <div class="bottom right_box">
+                                <img src="images/depth_recommend_list_03.png" alt="">
+                                <div class="number">
+                                    <span>点击</span>
+                                    <span>5000</span>
+                                </div>
+                                <div class="shadow">椿萱茂老年公寓</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depth_faceEach_list clearfix">
+                        <div class="depth_faceEach_box">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </div>
+                        <div class="depth_faceEach_box">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </div>
+                        <div class="depth_faceEach_box">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="depth_enter">
+            <div class="depth_enter_w">
+                <div class="depth_enter_title">
+                    <h2 class="">走进养老院</h2>
+                </div>
+                <div class="depth_enter_box">
+                    <div class="depth_enter_top clearfix">
+                        <div class="depth_enter_left">
+                            <img src="images/depth_faceEach_box_03.png" alt="">
+                            <div class="number">
+                                <span>点击</span>
+                                <span>4506</span>
+                            </div>
+                            <div class="shadow">椿萱茂的运营体系及战略布局</div>
+                        </div>
+                        <div class="depth_enter_right">
+                            <div class="top right_box">
+                                <img src="images/depth_recommend_list_03.png" alt="">
+                                <div class="number">
+                                    <span>点击</span>
+                                    <span>5000</span>
+                                </div>
+                                <div class="shadow">椿萱茂老年公寓</div>
+                            </div>
+                            <div class="bottom right_box">
+                                <img src="images/depth_recommend_list_03.png" alt="">
+                                <div class="number">
+                                    <span>点击</span>
+                                    <span>5000</span>
+                                </div>
+                                <div class="shadow">椿萱茂老年公寓</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depth_enter_list clearfix">
+                        <div class="depth_enter_box">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </div>
+                        <div class="depth_enter_box">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </div>
+                        <div class="depth_enter_box">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="depth_enter">
+            <div class="depth_enter_w">
+                <div class="depth_enter_title">
+                    <h2 class="">缨束沙龙</h2>
+                </div>
+                <div class="depth_enter_box">
+                    <div class="depth_enter_top clearfix">
+                        <div class="depth_enter_left">
+                            <img src="images/depth_faceEach_box_03.png" alt="">
+                            <div class="number">
+                                <span>点击</span>
+                                <span>4506</span>
+                            </div>
+                            <div class="shadow">椿萱茂的运营体系及战略布局</div>
+                        </div>
+                        <div class="depth_enter_right">
+                            <div class="top right_box">
+                                <img src="images/depth_recommend_list_03.png" alt="">
+                                <div class="number">
+                                    <span>点击</span>
+                                    <span>5000</span>
+                                </div>
+                                <div class="shadow">椿萱茂老年公寓</div>
+                            </div>
+                            <div class="bottom right_box">
+                                <img src="images/depth_recommend_list_03.png" alt="">
+                                <div class="number">
+                                    <span>点击</span>
+                                    <span>5000</span>
+                                </div>
+                                <div class="shadow">椿萱茂老年公寓</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depth_enter_list clearfix">
+                        <div class="depth_enter_box">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </div>
+                        <div class="depth_enter_box">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </div>
+                        <div class="depth_enter_box">
+                            <img src="images/depth_recommend_list_03.png" alt="">
+                            <div class="shadow">
+                                椿萱茂老年公寓
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+
+</body>
+
+
+
+</html>
